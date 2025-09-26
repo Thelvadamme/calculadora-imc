@@ -1,6 +1,6 @@
 using System;
 // Clase Persona que representa los datos necesarios para el cálculo del IMC
-
+// CLASE PERSONA - Calculadora IMC
 namespace CalculadoraIMC
 {
     public class Persona
@@ -22,7 +22,8 @@ namespace CalculadoraIMC
             Edad = Validaciones.ValidarEdad(edad);
             Genero = Validaciones.ValidarTexto(genero, "género"); // Puede contener números si es necesario
         }
-// Método para calcular el índice de masa corporal
+        // Método para calcular el índice de masa corporal
+        // aqui  podemos verificar el calculo 
         // Método para calcular el IMC
         public double CalcularIMC()
         {
@@ -35,7 +36,7 @@ namespace CalculadoraIMC
         public void MostrarResultados()
         {
             double imc = CalcularIMC();
-            
+
             // Determinar la categoría según el IMC
             string categoria = "";
             string riesgo = "";
@@ -75,7 +76,7 @@ namespace CalculadoraIMC
             Console.WriteLine("\n==================================================");
             Console.WriteLine("           RESULTADOS DEL CALCULO DE IMC");
             Console.WriteLine("==================================================");
-            
+
             Console.WriteLine("Nombre: " + Nombre);
             Console.WriteLine("Edad: " + Edad + " años");
             Console.WriteLine("Genero: " + Genero);
@@ -87,3 +88,7 @@ namespace CalculadoraIMC
         }
     }
 }
+
+
+
+// posteriormente en otros archivos  pondre las vadilaciones y programa principal "main"
