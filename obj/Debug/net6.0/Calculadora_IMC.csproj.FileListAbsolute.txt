@@ -12,3 +12,4 @@ C:\Users\inqui_12\CalculadoraIMC\Calculadora_IMC\obj\Debug\net6.0\refint\Calcula
 C:\Users\inqui_12\CalculadoraIMC\Calculadora_IMC\obj\Debug\net6.0\Calculadora_IMC.pdb
 C:\Users\inqui_12\CalculadoraIMC\Calculadora_IMC\obj\Debug\net6.0\Calculadora_IMC.genruntimeconfig.cache
 C:\Users\inqui_12\CalculadoraIMC\Calculadora_IMC\obj\Debug\net6.0\ref\Calculadora_IMC.dll
+C:\Users\inqui_12\CalculadoraIMC\Calculadora_IMC\obj\Debug\net6.0\Calculadora_IMC.sourcelink.json

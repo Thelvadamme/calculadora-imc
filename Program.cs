@@ -52,16 +52,16 @@ namespace CalculadoraIMC
             Console.ReadKey();
         }
 
-        // Método para pedir el nombre - SOLO LETRAS
+        // Método para pedir el nombre
         static string PedirNombre()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("1. Cual es tu nombre? ");
-                    string nombre = Console.ReadLine();
-                    return Validaciones.ValidarSoloLetras(nombre, "nombre");
+                    Console.Write("1. ¿Cuál es tu nombre? ");
+                    string entrada = Console.ReadLine();
+                    return Validaciones.ValidarNoVacio(entrada, "nombre");
                 }
                 catch (Exception error)
                 {
@@ -70,17 +70,16 @@ namespace CalculadoraIMC
             }
         }
 
-        // Método para pedir el peso - AHORA ACEPTA PUNTOS Y COMAS
+        // Método para pedir el peso - SOLO NÚMEROS
         static double PedirPeso()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("2. Cuanto pesas en kilogramos? (ejemplo: 75.5 o 75,5) ");
-                    string texto = Console.ReadLine();
-                    double peso = Validaciones.TextoANumero(texto, "peso");
-                    return Validaciones.ValidarNumero(peso, "peso", 300);
+                    Console.Write("2. ¿Cuánto pesas en kilogramos? (ejemplo: 64.40) ");
+                    string entrada = Console.ReadLine();
+                    return Validaciones.ValidarNumeroDecimal(entrada, "peso", 300);
                 }
                 catch (Exception error)
                 {
@@ -89,29 +88,26 @@ namespace CalculadoraIMC
             }
         }
 
-        // Método para pedir la altura - AHORA ACEPTA PUNTOS Y COMAS
+        // Método para pedir la altura
         static double PedirAltura()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("3. Cuanto mides en metros? (ejemplo: 1.75 o 1,75) ");
-                    string texto = Console.ReadLine();
+                    Console.Write("3. ¿Cuánto mides en metros? (ejemplo: 1.75) ");
+                    string entrada = Console.ReadLine();
                     
-                    // Si el usuario escribe la altura en centímetros (ej: 175), la convertimos a metros
-                    texto = texto.Replace(',', '.'); // Asegurar que usamos punto decimal
-                    
-                    if (double.TryParse(texto, out double alturaCm) && alturaCm > 10 && alturaCm < 300)
+                    // Si el usuario escribe en centímetros (ej: 175)
+                    entrada = entrada.Replace(',', '.');
+                    if (double.TryParse(entrada, out double altura) && altura > 100 && altura < 300)
                     {
-                        // Si el número está entre 10 y 300, probablemente son centímetros
-                        double alturaMetros = alturaCm / 100;
-                        Console.WriteLine("Nota: Se interpreto " + alturaCm + " cm como " + alturaMetros + " m");
-                        return Validaciones.ValidarNumero(alturaMetros, "altura", 3);
+                        double alturaMetros = altura / 100;
+                        Console.WriteLine($"Nota: Se interpretó {altura} cm como {alturaMetros} m");
+                        return Validaciones.ValidarNumeroDecimal(alturaMetros.ToString(), "altura", 3);
                     }
                     
-                    double altura = Validaciones.TextoANumero(texto, "altura");
-                    return Validaciones.ValidarNumero(altura, "altura", 3);
+                    return Validaciones.ValidarNumeroDecimal(entrada, "altura", 3);
                 }
                 catch (Exception error)
                 {
@@ -127,10 +123,9 @@ namespace CalculadoraIMC
             {
                 try
                 {
-                    Console.Write("4. Cuantos anos tienes? ");
-                    string texto = Console.ReadLine();
-                    int edad = Validaciones.TextoANumeroEntero(texto, "edad");
-                    return Validaciones.ValidarEdad(edad);
+                    Console.Write("4. ¿Cuántos años tienes? ");
+                    string entrada = Console.ReadLine();
+                    return Validaciones.ValidarEdad(entrada);
                 }
                 catch (Exception error)
                 {
@@ -146,9 +141,9 @@ namespace CalculadoraIMC
             {
                 try
                 {
-                    Console.Write("5. Cual es tu genero? ");
-                    string genero = Console.ReadLine();
-                    return Validaciones.ValidarTexto(genero, "genero");
+                    Console.Write("5. ¿Cuál es tu género? ");
+                    string entrada = Console.ReadLine();
+                    return Validaciones.ValidarNoVacio(entrada, "género");
                 }
                 catch (Exception error)
                 {
