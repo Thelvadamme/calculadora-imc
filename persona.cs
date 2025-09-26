@@ -1,4 +1,5 @@
 using System;
+// Clase Persona que representa los datos necesarios para el cálculo del IMC
 
 namespace CalculadoraIMC
 {
@@ -21,7 +22,7 @@ namespace CalculadoraIMC
             Edad = Validaciones.ValidarEdad(edad);
             Genero = Validaciones.ValidarTexto(genero, "género"); // Puede contener números si es necesario
         }
-
+// Método para calcular el índice de masa corporal
         // Método para calcular el IMC
         public double CalcularIMC()
         {
